@@ -1,0 +1,224 @@
+AML DRIFT DETECTION SYSTEM - FILE LISTING
+==========================================
+
+CORE SYSTEM MODULES
+-------------------
+main.py                   Main orchestrator class - coordinates all components
+data_processor.py         Data preprocessing, cleaning, and table joining
+feature_engineer.py       Creates 18+ behavioral features from transactions
+drift_detector.py         Statistical drift detection (PSI, KS, KL divergence)
+model_trainer.py          Trains and evaluates ML models (XGBoost, Logistic Regression)
+explainer.py              SHAP-based explainability for model predictions
+
+USER INTERFACES
+---------------
+cli.py                    Command-line interface for all operations
+web_interface.py          Streamlit-based web dashboard (interactive UI)
+quick_start.py            Interactive menu for getting started
+example_workflow.py       Complete end-to-end workflow demonstration
+
+DOCUMENTATION
+-------------
+README.md                 Project overview and quick start guide
+USER_GUIDE.md             Comprehensive user documentation (50+ pages)
+PROJECT_SUMMARY.md        Technical summary and architecture
+GETTING_STARTED.md        Step-by-step guide for using your own data
+FILES.txt                 This file - listing of all files
+
+CONFIGURATION
+-------------
+requirements.txt          Python package dependencies
+
+UTILITIES
+---------
+check_installation.py     Verifies all dependencies are installed correctly
+
+USAGE EXAMPLES
+==============
+
+1. QUICK START
+   python quick_start.py
+   - Interactive menu
+   - Generate sample data
+   - Run full workflow
+
+2. WEB INTERFACE
+   streamlit run web_interface.py
+   - Upload data via browser
+   - Visual dashboards
+   - Interactive classification
+
+3. COMMAND LINE
+   python cli.py train --data transactions.csv --output model.pkl
+   python cli.py classify --model model.pkl --alert alert.json --explain
+   python cli.py detect-drift --model model.pkl --data new_data.csv
+
+4. PYTHON API
+   from main import AMLDriftDetectionSystem
+   system = AMLDriftDetectionSystem()
+   system.upload_and_process_datasets('transactions.csv')
+   # ... continue with workflow
+
+5. FULL WORKFLOW EXAMPLE
+   python example_workflow.py
+   - Complete demonstration
+   - Synthetic data generation
+   - Training, drift detection, classification
+
+FILE SIZES & LINE COUNTS
+=========================
+Total Python code: ~3,500 lines
+Total documentation: ~2,000 lines
+Total project size: ~150 KB (excluding dependencies)
+
+KEY FEATURES BY FILE
+====================
+
+main.py (14,893 bytes)
+  - AMLDriftDetectionSystem class
+  - 10-step workflow orchestration
+  - Model save/load functionality
+  - Integration point for all modules
+
+data_processor.py (7,388 bytes)
+  - CSV loading and validation
+  - Column name standardization
+  - Missing value handling
+  - Transaction aggregation
+
+feature_engineer.py (9,878 bytes)
+  - 18+ behavioral features
+  - Burst score calculation
+  - Drift simulation
+  - Feature aggregation by alert
+
+drift_detector.py (10,522 bytes)
+  - PSI calculation
+  - KS test implementation
+  - KL divergence measurement
+  - Adaptive threshold adjustment
+
+model_trainer.py (10,257 bytes)
+  - XGBoost classifier
+  - Logistic Regression
+  - Ensemble methods
+  - Performance evaluation
+
+explainer.py (14,274 bytes)
+  - SHAP value calculation
+  - Human-readable explanations
+  - Investigator recommendations
+  - Feature interpretation
+
+cli.py (10,331 bytes)
+  - Train command
+  - Classify command
+  - Detect-drift command
+  - Batch-classify command
+
+web_interface.py (19,006 bytes)
+  - 7-page dashboard
+  - File upload interface
+  - Interactive visualizations
+  - Real-time classification
+
+RESEARCH PAPER IMPLEMENTATION
+==============================
+
+The system implements all methodologies from:
+"AML Alert Classification Under Transaction Behavior Shifts for False Positive Reduction"
+by Raghavi Sendil, Sai Santhosh Channaka, and Sahil Anjum (Pace University, 2024)
+
+Implemented features:
+✅ Feature engineering (exact features from paper)
+✅ Temporal window splitting (40%/30%/30%)
+✅ Drift detection (PSI, KS, KL)
+✅ Drift simulation (+30% size, +20% freq, +50% wire)
+✅ Retraining strategy
+✅ Performance evaluation across time windows
+
+GETTING STARTED
+===============
+
+1. Check installation:
+   python check_installation.py
+
+2. Read documentation:
+   - Start with README.md
+   - Then GETTING_STARTED.md for your own data
+   - Refer to USER_GUIDE.md for details
+
+3. Try examples:
+   python quick_start.py
+   python example_workflow.py
+
+4. Use web interface:
+   streamlit run web_interface.py
+
+5. Deploy to production:
+   See USER_GUIDE.md section "Production Deployment"
+
+DEPENDENCIES
+============
+
+Required:
+- numpy, pandas, scikit-learn, scipy
+
+Recommended:
+- xgboost (high-performance models)
+- shap (explainability)
+
+Optional:
+- streamlit, plotly (web interface)
+- matplotlib, seaborn (visualizations)
+
+Install all:
+pip install -r requirements.txt
+
+SUPPORT & DOCUMENTATION
+========================
+
+For help, consult in this order:
+1. GETTING_STARTED.md - Quick start with your data
+2. README.md - Overview and installation
+3. USER_GUIDE.md - Comprehensive documentation
+4. example_workflow.py - Working code examples
+5. PROJECT_SUMMARY.md - Technical architecture
+
+SYSTEM REQUIREMENTS
+===================
+
+- Python 3.8 or higher
+- 4GB RAM minimum (8GB recommended)
+- 1GB disk space
+- Modern CPU (multi-core recommended for XGBoost)
+
+PRODUCTION READY
+================
+
+This system is production-ready with:
+✅ Complete error handling
+✅ Logging throughout
+✅ Model persistence
+✅ Batch processing support
+✅ Real-time classification
+✅ Drift monitoring
+✅ Automatic retraining
+✅ SHAP explanations
+✅ Multiple interfaces (API, CLI, Web)
+✅ Comprehensive documentation
+
+LICENSE & ATTRIBUTION
+=====================
+
+Built based on academic research from Pace University
+For educational and research purposes
+Implements methodology from published research paper
+
+VERSION
+=======
+
+Version: 1.0.0
+Created: 2024
+Last Updated: 2026-05-01
+
